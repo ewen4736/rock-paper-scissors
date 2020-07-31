@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title Page</title>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <script>
+            let options = ['rock', 'paper', 'scissors']
+            
+            function computerPlay() {
+                let computerChoice = options[Math.round(Math.random * options.length)]
+                return computerChoice
+            }
+            
+            function playRound(playerSelection, computerSelection) {
+                playerChoice = playerSelection.toLowerCase()
+
+                if (playerChoice == 'rock') {
+                    if (computerSelection == options[0]) {
+                        return "Rock vs Rock: It's a tie!"
+                    }
+                    if (computerSelection == options[1]) {
+                        return "Rock vs Paper: You lose :("
+                    }
+                    if (computerSelection == options[2]) {
+                        return "Rock vs Scissors: You win!"
+                    }
+                }
+                else if (playerChoice == 'paper') {
+                    if (computerSelection == options[0]) {
+                        return "Paper vs Rock: You win!"
+                    }
+                    if (computerSelection == options[1]) {
+                        return "Paper vs Paper: It's a tie!"
+                    }
+                    if (computerSelection == options[2]) {
+                        return "Paper vs Scissors: You lose :("
+                    }
+                }
+                else if (playerChoice == 'scissors') {
+                    if (computerSelection == options[0]) {
+                        return "Scissors vs Rock: You lose :("
+                    }
+                    if (computerSelection == options[1]) {
+                        return "Scissors vs Paper: You win!"
+                    }
+                    if (computerSelection == options[2]) {
+                        return "Scissors vs Scissors: It's a tie!"
+                    }
+                }
+            }
+            
+            playerSelection = 'rock'
+            computerSelection = computerPlay()
+            console.log(playRound(playerSelection, computerSelection))
+        </script>
+    </body>
+</html>
